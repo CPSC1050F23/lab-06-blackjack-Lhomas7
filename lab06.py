@@ -146,10 +146,10 @@ for i in range(num_players):
     print(f"Player {i + 1}'s cards:")
     print(player_hands[i])
     print(f"Player {i + 1} would you like to hit or stick?")
-    decision = input().strip()
+    decision = input().strip().lower()
     while decision != 'hit' and decision != 'stick':
         print("Invalid input. Please enter either hit or stick: ")
-        decision = input().strip()
+        decision = input().strip().lower()
     while decision == 'hit':
         add_card(i+1)
         points(player_hands)
@@ -165,10 +165,10 @@ for i in range(num_players):
             player_points[i] = 0
             break 
         else:
-            print(f"Player {i + 1}'s cards:")
+            print(f"Player {i + 1}'s cards:", end = '')
             print(player_hands[i])
             print(f"Player {i + 1} would you like to hit or stick?")
-            decision = input().strip()
+            decision = input().strip().lower()
             while decision != 'hit' and decision != 'stick':
                 print("Invalid input. Please enter either hit or stick: ")
                 decision = input().strip()
