@@ -84,34 +84,36 @@ def points(player_hands):
         points = 0
         for j in range(len(player_hands[i])):
             count = 0
-            if player_hands[i][j] != 'AH' and player_hands[i][j] != 'AS' and player_hands[i][j] != 'AD' and player_hands[i][j] != 'AC':
-                if player_hands[i][j] == '10H' or player_hands[i][j] == 'JH' or player_hands[i][j] == 'QH' or player_hands[i][j] == 'KH' or player_hands[i][j] == '10D' or player_hands[i][j] == 'JD' or player_hands[i][j] == 'QD' or player_hands[i][j] == 'KD' or player_hands[i][j] == '10C' or player_hands[i][j] == 'JC' or player_hands[i][j] == 'QC' or player_hands[i][j] == 'KC' or player_hands[i][j] == '10S' or player_hands[i][j] == 'JS' or player_hands[i][j] == 'QS' or player_hands[i][j] == 'KS':
-                    points += 10
-                elif player_hands[i][j] == '9H' or player_hands[i][j] == '9D' or player_hands[i][j] == '9S' or player_hands[i][j] == '9C':
-                    points += 9
-                elif player_hands[i][j] == '8H' or player_hands[i][j] == '8D' or player_hands[i][j] == '8S' or player_hands[i][j] == '8C':
-                    points += 8
-                elif player_hands[i][j] == '7H' or player_hands[i][j] == '7D' or player_hands[i][j] == '7S' or player_hands[i][j] == '7C':
-                    points += 7
-                elif player_hands[i][j] == '6H' or player_hands[i][j] == '6D' or player_hands[i][j] == '6S' or player_hands[i][j] == '6C':
-                    points += 6
-                elif player_hands[i][j] == '5H' or player_hands[i][j] == '5D' or player_hands[i][j] == '5S' or player_hands[i][j] == '5C':
-                    points += 5
-                elif player_hands[i][j] == '4H' or player_hands[i][j] == '4D' or player_hands[i][j] == '4S' or player_hands[i][j] == '4C':
-                    points += 4
-                elif player_hands[i][j] == '3H' or player_hands[i][j] == '3D' or player_hands[i][j] == '3S' or player_hands[i][j] == '3C':
-                    points += 3
-                elif player_hands[i][j] == '2H' or player_hands[i][j] == '2D' or player_hands[i][j] == '2S' or player_hands[i][j] == '2C':
-                    points += 2
-            else:
-                if player_hands[i][j] == 'AH':
-                    count += 1
-                elif player_hands[i][j] == 'AS':
-                    count += 1
-                elif player_hands[i][j] == 'AD':
-                    count += 1
-                elif player_hands[i][j] == 'AC':
-                    count += 1
+            if player_hands[i][j] == 'AH' or player_hands[i][j] == 'AS' or player_hands[i][j] == 'AD' or player_hands[i][j] == 'AC':
+                continue
+            if player_hands[i][j] == '10H' or player_hands[i][j] == 'JH' or player_hands[i][j] == 'QH' or player_hands[i][j] == 'KH' or player_hands[i][j] == '10D' or player_hands[i][j] == 'JD' or player_hands[i][j] == 'QD' or player_hands[i][j] == 'KD' or player_hands[i][j] == '10C' or player_hands[i][j] == 'JC' or player_hands[i][j] == 'QC' or player_hands[i][j] == 'KC' or player_hands[i][j] == '10S' or player_hands[i][j] == 'JS' or player_hands[i][j] == 'QS' or player_hands[i][j] == 'KS':
+                points += 10
+            elif player_hands[i][j] == '9H' or player_hands[i][j] == '9D' or player_hands[i][j] == '9S' or player_hands[i][j] == '9C':
+                points += 9
+            elif player_hands[i][j] == '8H' or player_hands[i][j] == '8D' or player_hands[i][j] == '8S' or player_hands[i][j] == '8C':
+                points += 8
+            elif player_hands[i][j] == '7H' or player_hands[i][j] == '7D' or player_hands[i][j] == '7S' or player_hands[i][j] == '7C':
+                points += 7
+            elif player_hands[i][j] == '6H' or player_hands[i][j] == '6D' or player_hands[i][j] == '6S' or player_hands[i][j] == '6C':
+                points += 6
+            elif player_hands[i][j] == '5H' or player_hands[i][j] == '5D' or player_hands[i][j] == '5S' or player_hands[i][j] == '5C':
+                points += 5
+            elif player_hands[i][j] == '4H' or player_hands[i][j] == '4D' or player_hands[i][j] == '4S' or player_hands[i][j] == '4C':
+                points += 4
+            elif player_hands[i][j] == '3H' or player_hands[i][j] == '3D' or player_hands[i][j] == '3S' or player_hands[i][j] == '3C':
+                points += 3
+            elif player_hands[i][j] == '2H' or player_hands[i][j] == '2D' or player_hands[i][j] == '2S' or player_hands[i][j] == '2C':
+                points += 2
+        for j in range(len(player_hands[i])):
+            count = 0
+            if player_hands[i][j] == 'AH':
+                count += 1
+            elif player_hands[i][j] == 'AS':
+                count += 1
+            elif player_hands[i][j] == 'AD':
+                count += 1
+            elif player_hands[i][j] == 'AC':
+                count += 1
             if count == 4 and (21 - points) >=14:
                 points += 14
             elif count == 4 and (21 - points) < 14:
