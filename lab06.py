@@ -20,7 +20,6 @@ deck = [
 import random
 print("Give me a seed:")
 seed = int(input())
-print(seed)
 random.seed(seed)
 
 print("How many players would you like to play with?")
