@@ -116,6 +116,7 @@ def add_card(player):
 deal(num_players)
 print("Now that everyone knows their cards, let's play!")
 
+"""determine appropriate response if player busts, hits, or sticks"""
 for i in range(num_players):
     print(f"Player {i + 1}'s cards:")
     print(player_hands[i])
@@ -151,7 +152,7 @@ for i in range(num_players):
     if decision == 'stick':
         points(player_hands)
         continue
-
+"""display who busted"""
 for i in range(num_players):
     if player_hands[i] == [0,0]:       
         print(f"Player {i + 1} has busted.")
