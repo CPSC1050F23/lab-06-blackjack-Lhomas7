@@ -173,6 +173,7 @@ for i in range(num_players):
                 print("Invalid input. Please enter either hit or stick: ")
                 decision = input().strip()
     if decision == 'stick':
+        points(player_hands)
         continue
 
 for i in range(num_players):
@@ -180,7 +181,10 @@ for i in range(num_players):
         print(f"Player {i + 1} has busted.")
 
 """determine winner"""
-max_points = max(player_points)
+max_points = 0
+for point in player_points:
+    if point > max_points:
+        max_points = point
 if max_points > 0:     
     if player_points.count(max_points) == 2:
         winner1 = player_points.index(max_points)
