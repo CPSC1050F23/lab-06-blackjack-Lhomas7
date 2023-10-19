@@ -36,6 +36,7 @@ def deal(num_players):
         index = random.randint(0, len(deck) - 1)
         personal_hand.append(deck[index])
         del deck[index]
+        index = random.randint(0, len(deck) - 1)
         personal_hand.append(deck[index])
         del deck[index]
         player_hands.append(personal_hand)
