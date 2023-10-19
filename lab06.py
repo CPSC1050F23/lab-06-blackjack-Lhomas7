@@ -83,6 +83,7 @@ def points(player_hands):
     for i in range(num_players):
         points = 0
         for j in range(len(player_hands[i])):
+            count = 0
             if player_hands[i][j] != 'AH' and player_hands[i][j] != 'AS' and player_hands[i][j] != 'AD' and player_hands[i][j] != 'AC':
                 if player_hands[i][j] == '10H' or player_hands[i][j] == 'JH' or player_hands[i][j] == 'QH' or player_hands[i][j] == 'KH' or player_hands[i][j] == '10D' or player_hands[i][j] == 'JD' or player_hands[i][j] == 'QD' or player_hands[i][j] == 'KD' or player_hands[i][j] == '10C' or player_hands[i][j] == 'JC' or player_hands[i][j] == 'QC' or player_hands[i][j] == 'KC' or player_hands[i][j] == '10S' or player_hands[i][j] == 'JS' or player_hands[i][j] == 'QS' or player_hands[i][j] == 'KS':
                     points += 10
@@ -103,7 +104,30 @@ def points(player_hands):
                 elif player_hands[i][j] == '2H' or player_hands[i][j] == '2D' or player_hands[i][j] == '2S' or player_hands[i][j] == '2C':
                     points += 2
             else:
-                check_ace(0, points)
+                if player_hands[i][j] == 'AH':
+                    count += 1
+                elif player_hands[i][j] == 'AS':
+                    count += 1
+                elif player_hands[i][j] == 'AD':
+                    count += 1
+                elif player_hands[i][j] == 'AC':
+                    count += 1
+            if count == 4 and (21 - points) >=14:
+                points += 14
+            elif count == 4 and (21 - points) < 14:
+                points += 4
+            elif count == 3 and (21 - points) >=13:
+                points += 13
+            elif count == 3 and (21 - points) < 13: 
+                points += 3
+            elif count == 2 and (21- points) >= 12:
+                points += 12
+            elif count == 2 and (21 - points) < 12:
+                points += 2
+            elif count == 1 and (21 - points) >= 11:
+                points += 11
+            elif count == 1 and (21 - points) < 11:
+                points += 1
         player_points[i] = points
 
 """define how to add a card to a player's hand"""
