@@ -134,7 +134,7 @@ for i in range(num_players):
             while len(busted) != 1:
                 print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
                 busted = input().split()   
-            player_hands[i] = 0
+            player_hands[i] = [0,0]
             player_points[i] = 0
             break 
         else:
