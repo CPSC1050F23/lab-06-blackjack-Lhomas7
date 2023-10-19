@@ -125,7 +125,7 @@ for i in range(num_players):
         print("Invalid input. Please enter either hit or stick: ")
         decision = input().strip()
     while decision == 'hit':
-        add_card(i)
+        add_card(i+1)
         points(player_hands)
         if player_points[i] > 21:
             print(player_hands[i])
