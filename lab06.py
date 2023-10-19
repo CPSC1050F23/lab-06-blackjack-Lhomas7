@@ -44,7 +44,7 @@ def deal(num_players):
         print(player_hands[i])
         print(f"Acknowledge that you have seen your cards player {i + 1} by entering any key.")
         seen = input().split()
-        while len(seen) != 1:
+        while len(seen) == 0:
             print(f"Acknowledge that you have seen your cards player {i + 1} by entering any key.")
             seen = input().split()
 
@@ -158,7 +158,7 @@ for i in range(num_players):
             print(player_hands[i])
             print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
             busted = input().split()
-            while len(busted) != 1:
+            while len(busted) == 0:
                 print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
                 busted = input().split()   
             player_hands[i] = [0,0]
