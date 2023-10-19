@@ -154,7 +154,7 @@ for i in range(num_players):
         add_card(i+1)
         points(player_hands)
         if player_points[i] > 21:
-            print(f"Player{i + 1}'s cards:")
+            print(f"Player{i + 1}'s cards:", end = '')
             print(player_hands[i])
             print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
             busted = input().split()
