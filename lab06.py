@@ -156,10 +156,10 @@ for i in range(num_players):
         if player_points[i] > 21:
             print(f"Player{i + 1}'s cards:", end = '')
             print(player_hands[i])
-            print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
+            print(f"Player {i + 1} you have busted. Enter any key to acknowledge this.")
             busted = input().split()
             while len(busted) == 0:
-                print(f"Player {i + 1} you have busted. Enter any key to acknowlege this.")
+                print(f"Player {i + 1} you have busted. Enter any key to acknowledge this.")
                 busted = input().split()   
             player_hands[i] = [0,0]
             player_points[i] = 0
