@@ -191,7 +191,7 @@ if max_points > 0:
     if player_points.count(max_points) == 2:
         winner1 = player_points.index(max_points)
         winner2 = player_points.index(max_points, winner1 + 1)
-        print(f"Players {winner1 + 1} and {winner2 + 1} tied for the highest score of {max_points}")
+        print(f"Players {winner1 + 1} and {winner2 + 1} tied for the highest score of {max_points}.")
     elif player_points.count(max_points) == 1:
         winner = player_points.index(max_points)
         print(f"Player {winner + 1} got the highest score of {max_points}.")
