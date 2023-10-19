@@ -50,34 +50,6 @@ def deal(num_players):
             print(f"Acknowledge that you have seen your cards player {i + 1} by entering any key.")
             seen = input().split()
 
-"""define how to check if an Ace is 1 or 11"""
-def check_ace(count, points):
-    for hand in player_hands:
-        for card in hand:
-            if card == 'AH':
-                count += 1
-            elif card == 'AS':
-                count += 1
-            elif card == 'AD':
-                count += 1
-            elif card == 'AC':
-                count += 1
-        if count == 4 and (21 - points) >=14:
-            points += 14
-        elif count == 4 and (21 - points) < 14:
-            points += 4
-        elif count == 3 and (21 - points) >=13:
-            points += 13
-        elif count == 3 and (21 - points) < 13: 
-            points += 3
-        elif count == 2 and (21- points) >= 12:
-            points += 12
-        elif count == 2 and (21 - points) < 12:
-            points += 2
-        elif count == 1 and (21 - points) >= 11:
-            points += 11
-        elif count == 1 and (21 - points) < 11:
-            points += 1
 
 """define how to get points for each player"""           
 player_points =[0 for i in range(num_players)]
@@ -159,8 +131,10 @@ for i in range(num_players):
             print(f"Player{i + 1}'s cards:", end = '')
             print(player_hands[i])
             print(f"Player {i + 1} you have busted. Enter any key to acknowledge this.")
-            busted = input().split()
-            while len(busted) == 0:
+            busted = input()
+            check_bust = []
+            check_bust.append(busted)
+            while len(check_bust) == 0:
                 print(f"Player {i + 1} you have busted. Enter any key to acknowledge this.")
                 busted = input().split()   
             player_hands[i] = [0,0]
